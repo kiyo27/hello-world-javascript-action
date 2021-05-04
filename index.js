@@ -15,7 +15,7 @@ const config = {
 
 axios(config)
 .then(function(response) {
-  console.log(response.data)
+  // console.log(response.data)
 })
 .catch(function(response) {
   console.log(response)
