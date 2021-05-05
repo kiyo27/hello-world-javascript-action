@@ -1,13 +1,12 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Slack Notification'
+description: 'Sending a message from actions to slack.'
 inputs:
   webhook-url:  # id of input
-    description: 'Who to greet'
+    description: 'Webhook url'
     required: true
-    default: 'World'
 outputs:
   time: # id of output
-    description: 'The time we greeted you'
+    description: 'The time we receive'
 runs:
   using: 'node12'
   main: 'dist/index.js'

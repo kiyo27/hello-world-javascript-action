@@ -3147,6 +3147,8 @@ module.exports = require("zlib");;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
+// require('dotenv').config();
+
 const axios = __nccwpck_require__(9);
 const core = __nccwpck_require__(296);
 const url = core.getInput('webhook-url');
@@ -3164,10 +3166,13 @@ const config = {
 
 axios(config)
 .then(function(response) {
+  const time = (new Date()).toTimeString();
+  core.setOutput("time", time);
   // console.log(response.data)
 })
-.catch(function(response) {
-  console.log(response)
+.catch(function(error) {
+  // console.log(error.response.data)
+  core.setFailed(error.message);
 })
 })();
 
